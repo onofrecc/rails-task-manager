@@ -17,6 +17,22 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(tasks_params)
+    redirect_to task_path(@task)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to '/tasks', status: see_other
+  end
+
   private
 
   def tasks_params

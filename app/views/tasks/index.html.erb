@@ -1,7 +1,7 @@
-<h1>My tasks</h1>
-<ul>
+<h1 class="p-5">My tasks</h1>
+<ul class="p-5">
   <% @tasks.each do |task| %>
     <%# link_to ANCHOR_TEXT, ANCHOR_URL %>
-    <li><%= link_to task.title, task_path(task.id) %></li>
+    <li><input type="checkbox"><%= link_to task.title, task_path(task.id) %></li>
   <% end %>
 </ul>
